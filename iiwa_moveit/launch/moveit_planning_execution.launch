@@ -16,8 +16,8 @@
     
     <remap from="/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory" 
            to="/$(arg robot_name)/$(arg hardware_interface)_trajectory_controller/follow_joint_trajectory" />
-    <remap from="robot_description" to="/$(arg robot_name)/robot_description" /> 
-    <remap from="/get_planning_scene" to="/$(arg robot_name)/get_planning_scene" /> 
+    <!--remap from="robot_description" to="/$(arg robot_name)/robot_description" /-->
+    <remap from="/get_planning_scene" to="/$(arg robot_name)/get_planning_scene" />
     
     <!-- Run the robot within a Gazebo simulation. -->
     <group if="$(arg sim)">

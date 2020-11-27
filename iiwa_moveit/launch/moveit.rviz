@@ -1,13 +1,14 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 84
+    Help Height: 0
     Name: Displays
     Property Tree Widget:
       Expanded:
         - /MotionPlanning1
-        - /MotionPlanning1/Status1
+        - /DepthCloud1
+        - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.74256
-    Tree Height: 532
+    Tree Height: 156
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -45,8 +46,19 @@ Visualization Manager:
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
       MoveIt_Warehouse_Port: 33829
+      MoveIt_Workspace:
+        Center:
+          X: 0
+          Y: 0
+          Z: 0
+        Size:
+          X: 2
+          Y: 2
+          Z: 2
       Name: MotionPlanning
       Planned Path:
+        Color Enabled: false
+        Interrupt Display: false
         Links:
           All Links Enabled: true
           Expand Joint Details: false
@@ -97,16 +109,13 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          tool0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           world:
             Alpha: 1
             Show Axes: false
             Show Trail: false
         Loop Animation: true
         Robot Alpha: 0.5
+        Robot Color: 150; 50; 150
         Show Robot Collision: false
         Show Robot Visual: true
         Show Trail: false
@@ -192,10 +201,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          tool0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           world:
             Alpha: 1
             Show Axes: false
@@ -203,6 +208,88 @@ Visualization Manager:
         Robot Alpha: 0.5
         Show Robot Collision: false
         Show Robot Visual: true
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        iiwa_link_0:
+          Value: true
+        iiwa_link_1:
+          Value: true
+        iiwa_link_2:
+          Value: true
+        iiwa_link_3:
+          Value: true
+        iiwa_link_4:
+          Value: true
+        iiwa_link_5:
+          Value: true
+        iiwa_link_6:
+          Value: true
+        iiwa_link_7:
+          Value: true
+        iiwa_link_ee:
+          Value: true
+        world:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          iiwa_link_0:
+            iiwa_link_1:
+              iiwa_link_2:
+                iiwa_link_3:
+                  iiwa_link_4:
+                    iiwa_link_5:
+                      iiwa_link_6:
+                        iiwa_link_7:
+                          iiwa_link_ee:
+                            {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: ""
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: ""
+      Depth Map Transport Hint: raw
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: ""
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
@@ -219,7 +306,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 3.34699
+      Distance: 2.21566
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -231,24 +318,24 @@ Visualization Manager:
         Z: 2.23518e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.359797
+      Pitch: 0.289797
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.67496
+      Yaw: 5.76496
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1138
+  Height: 793
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000422fc0200000005fb000000100044006900730070006c0061007900730100000033000002a5000000d801000005fb0000000800480065006c00700000000342000000bb0000007101000005fb0000000a0056006900650077007300000003b0000000b0000000ab01000005fb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000002db0000017a00000171010000050000047f0000042200000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b8000002bafc0200000005fb000000100044006900730070006c0061007900730100000041000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000124000001d7000001cc00ffffff00000257000002ba00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1828
-  X: 88
-  Y: 0
+  Width: 1301
+  X: 55
+  Y: 14

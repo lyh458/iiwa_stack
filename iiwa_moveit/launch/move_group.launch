@@ -43,10 +43,10 @@
     <arg name="hardware_interface" value="$(arg hardware_interface)"/>
   </include>
 
-  <!-- Sensors Functionality -->
+  <!-- Sensors Functionality
   <include ns="move_group" file="$(find iiwa_moveit)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="iiwa" />
-  </include>
+  </include>-->
 
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
@@ -59,7 +59,7 @@
 
     <!-- MoveGroup capabilities to load -->
     <param name="capabilities" value="move_group/MoveGroupCartesianPathService
-				      move_group/MoveGroupExecuteTrajectoryAction
+				      move_group/MoveGroupExecuteService
 				      move_group/MoveGroupKinematicsService
 				      move_group/MoveGroupMoveAction
 				      move_group/MoveGroupPickPlaceAction

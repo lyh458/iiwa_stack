@@ -2,7 +2,7 @@
 
 import rospy
 from sensor_msgs.msg import JointState
-from iiwa_msgs.msg import CartesianPose
+import geometry_msgs
 
 rospy.init_node('ntp_verifier')
 
@@ -13,11 +13,11 @@ def ntplog(msg):
 	last_msg = msg
 
 def print_msg(msg):
-  if msg is not None:
-    diff = msg.poseStamped.header.stamp - rospy.Time.now()
-    print('The current time difference is: {} secs'.format(diff.to_sec()))
+	if msg is not None:
+		diff = msg.header.stamp - rospy.Time.now()
+		print('time difference: {} secs'.format(diff.to_sec()))
 
-sub = rospy.Subscriber('/iiwa/state/CartesianPose', CartesianPose, ntplog, queue_size=1)
+sub = rospy.Subscriber('/iiwa/state/CartesianPose', geometry_msgs.msg.PoseStamped, ntplog, queue_size=1)
 
 while not rospy.is_shutdown():
 	print_msg(last_msg)

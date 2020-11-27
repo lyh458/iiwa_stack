@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="publishJointStates" default="true"/>
+    <param name="/iiwa/publishJointStates" type="string" value="$(arg publishJointStates)"/>
+</launch>
+

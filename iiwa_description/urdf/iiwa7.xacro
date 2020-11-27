@@ -307,7 +307,7 @@
       <visual>
         <origin xyz="0 0 -0.0005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/link_7.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/MF_Touch_pneumatisch.dae"/>
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -315,7 +315,7 @@
       <collision>
         <origin xyz="0 0 -0.0005" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa7/collision/link_7.stl"/>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/collision/MF_Touch_pneumatisch.dae"/>
         </geometry>
         <material name="Grey"/>
       </collision>
@@ -324,10 +324,33 @@
     <joint name="${robot_name}_joint_ee" type="fixed">
       <parent link="${robot_name}_link_7"/>
       <child link="${robot_name}_link_ee"/>
-      <origin xyz="0 0 0.045" rpy="0 0 0"/>
+      <origin xyz="0 0 0.071" rpy="0 0 0"/> <!--0.045-->
     </joint>
     
     <link name="${robot_name}_link_ee">
+    <visual>
+        <origin xyz="0 0 0" rpy="${PI / 2} 0 0"/>
+        <geometry>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/visual/tool_pneumatisch.dae"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      
+      <collision>
+        <origin xyz="0 0 0" rpy="${PI / 2} 0 0"/>
+        <geometry>
+          <mesh filename="package://iiwa_description/meshes/iiwa7/collision/tool_pneumatisch.dae"/>
+        </geometry>
+        <material name="Grey"/>
+      </collision>
+    </link>
+
+    <joint name="${robot_name}_joint_tool" type="fixed">
+      <parent link="${robot_name}_link_ee"/>
+      <child link="${robot_name}_link_tool"/>
+      <origin xyz="0 0 0" rpy="${PI} 0 ${PI}"/>
+    </joint>
+    <link name="${robot_name}_link_tool">
     </link>
     
     <!--Extensions -->
