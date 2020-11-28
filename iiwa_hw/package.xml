@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
+<!-- <package> -->
   <name>iiwa_hw</name>
   <version>1.4.0</version>
   <description>The hardware interface to an KUKA LBR IIWA Robot</description>
@@ -20,8 +21,22 @@
   <depend>roscpp</depend>
   <depend>iiwa_msgs</depend>
   <depend>iiwa_ros</depend>
+  <!-- <build_depend>controller_interface</build_depend>
+  <build_depend>joint_limits_interface</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>control_toolbox</build_depend>
+  <build_depend>realtime_tools</build_depend>
+  <build_depend> roscpp </build_depend>
+  <build_depend>iiwa_msgs</build_depend>
+  <build_depend>iiwa_ros</build_depend> -->
 
   <export>
     <hardware_interface plugin="${prefix}/iiwa_hw_plugin.xml"/>
   </export>
+  <!-- <run_depend>controller_interface</run_depend>
+  <run_depend>hardware_interface</run_depend>
+  <run_depend>control_toolbox</run_depend>
+  <run_depend>realtime_tools</run_depend>  
+  <run_depend>iiwa_msgs</run_depend>
+  <run_depend>iiwa_ros</run_depend> -->
 </package>

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
+<!-- <package> -->
   <name>iiwa_description</name>
   <version>1.4.0</version>
   <description>This package contains the URDF of the KUKA LBR IIWA robot</description>
@@ -10,5 +11,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>force_torque_sensor_controller</depend>
+  <!-- <buildtool_depend>catkin</buildtool_depend> -->
 
 </package>

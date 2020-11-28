@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
+# cmake_minimum_required(VERSION 2.8.3)
 project(iiwa_ros)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 
 find_package(catkin REQUIRED COMPONENTS
   iiwa_msgs
@@ -18,6 +20,10 @@ catkin_package(
 
 add_library(${PROJECT_NAME}
 	src/iiwa_ros.cpp
+#	src/smart_servo_service.cpp
+#	src/path_parameters_service.cpp
+#	src/time_to_destination_service.cpp
+# )
 
   src/state/cartesian_pose.cpp
   src/state/cartesian_wrench.cpp
